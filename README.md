@@ -1,102 +1,111 @@
-# 🚀 Maven SpringBoot Employee API
+🚀 Jenkins CI Pipeline with Maven and Spring Boot
 
-## 📌 Project Overview
+📌 Project Overview
+This project demonstrates a **Continuous Integration (CI) pipeline using Jenkins integrated with GitHub**. The application is a simple **Spring Boot Employee API** built using **Maven**, and Jenkins automatically builds the project whenever the pipeline runs.
 
-**Maven SpringBoot Employee API** is a simple Java web application built using **Spring Boot** and **Maven** that demonstrates how a backend service is built, packaged, and executed as a standalone application.
+The pipeline reads the **Jenkinsfile directly from the GitHub repository** and executes multiple stages to build the application and generate the final artifact.
 
-This project showcases the complete lifecycle of a production-style application:
+This project shows how modern DevOps workflows automate the process of:
 
-* Build using Maven
-* Package as executable JAR
-* Run embedded server
-* Handle HTTP requests
-* Return browser responses
+Pulling source code from GitHub
+Building the project using Maven
+Running automated tests
+Packaging the application as an executable JAR artifact
 
-It is designed to demonstrate practical understanding of **application build, runtime behavior, and deployment flow**, which are essential skills for backend and DevOps environments.
+It demonstrates a practical **CI pipeline workflow used in real DevOps environments**.
 
----
+⚙️ Tech Stack
+Java 17
+Spring Boot
+Maven
+Jenkins
+Git
+GitHub
 
-## ⚙️ Tech Stack
+📂 Project Structure
+jenkins-ci
+├── Jenkinsfile
+├── pom.xml
+└── src
+├── main/java/com/example/employee
+│        ├── EmployeeApiApplication.java
+│        └── HelloController.java
+└── main/resources
+└── application.properties
 
-* Java 17
-* Spring Boot
-* Maven
-* Embedded Tomcat Server
+⚙️ Jenkins Pipeline Stages
 
----
+The Jenkins pipeline defined in the **Jenkinsfile** contains the following stages:
 
-## 📂 Project Structure
+Checkout
+Pulls the source code from the GitHub repository.
 
-```
-employee-api
- ├── pom.xml
- └── src
-      ├── main/java/com/example/employee
-      │        ├── EmployeeApiApplication.java
-      │        └── HelloController.java
-      └── main/resources
-               └── application.properties
-```
+Build
+Compiles the application using Maven.
 
----
+Test
+Runs project tests using Maven.
 
-## ▶️ How to Run Application
+Package
+Packages the application and generates the final executable **JAR artifact**.
 
-### Build Project
+Example pipeline workflow:
 
-```
+GitHub Repository
+↓
+Jenkins Pipeline
+↓
+Checkout Source Code
+↓
+Build (mvn compile)
+↓
+Test (mvn test)
+↓
+Package (mvn package)
+↓
+Artifact Generated (.jar)
+
+▶️ How to Run Application Manually
+
+Build the project
+
 mvn package
-```
 
-### Run Application
+Run the application
 
-```
-java -jar target/employee-api-1.0.0.jar
-```
+java -jar target/employee-api-1.0.jar
 
----
-
-## 🌐 Access Endpoint
+🌐 Access Endpoint
 
 Open in browser:
 
-```
-http://localhost:8080/hello
-```
+http://localhost:8080/
 
-**Output**
+Example Response
 
-```
-Hello Employee Service Running
-```
+Welcome to Employee API - Jenkins CI Pipeline Working!
 
----
+🎯 What This Project Demonstrates
 
-## 🎯 What This Project Demonstrates
+This project demonstrates practical knowledge of:
 
-This project proves understanding of:
+Jenkins CI pipeline creation
+GitHub integration with Jenkins
+Pipeline as Code using Jenkinsfile
+Maven build lifecycle
+Automated build, test, and packaging process
+Artifact generation in CI pipeline
 
-* Maven build lifecycle
-* Dependency management
-* Packaging Java applications
-* Running executable JAR services
-* Embedded server execution
-* REST endpoint handling
+💼 Why This Project Matters
 
----
+This repository demonstrates how DevOps engineers automate application builds using **Continuous Integration pipelines**. It reflects real-world practices used in modern software development environments.
 
-## 💼 Why This Project Matters
+The project highlights:
 
-This repository demonstrates practical knowledge required in real-world development and DevOps environments, including:
+Automated CI pipeline execution
+Source control integration with Jenkins
+Build automation using Maven
+Artifact generation for deployment pipelines
 
-* Build automation
-* Application packaging
-* Runtime execution
-* Service testing
-
----
-
-## 👨‍💻 Author
-
-Developed as part of hands-on practice to strengthen backend and DevOps fundamentals.
-
+👨‍💻 Author
+Developed as part of hands-on practice to strengthen **AWS, DevOps, and CI/CD pipeline skills**.
